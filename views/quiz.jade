@@ -1,0 +1,17 @@
+extends layout
+
+mixin Button(value, text)
+  td
+    form(method="POST", autocomplete='off')
+      input(type="hidden", name="choice", value=value)
+      button= text
+
+block content
+  .image
+    img(description='description', src=img, width="300")
+  table
+    tr
+      +Button('pass', 'Pass')
+      +Button('like', 'Like')
+      +Button('super-like', 'Super-like')
+      +Button('stop', 'Stop')
